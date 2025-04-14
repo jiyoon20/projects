@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layout}">
+
+<div layout:fragment="content" class="container my-4">
+    <h2 class="mb-4"> Your Order Is Submitted! </h2>
+    <p class="text-success">Thank you for your order! Your order has been successfully placed.</p>
+
+    <div th:if="${orderItemList != null and orderItemList.size() > 0}">
+        <div th:each="orderItem : ${orderItemList}" class="card mb-3 shadow-sm">
+            <div class="card-body d-flex align-items-center">
+                <h5 class="mb-1">
+                    <span th:text="${orderItem.menuTitle}"></span> -
+                    <span th:text="'$' + ${orderItem.price}"></span> x
+                    <span th:text="${orderItem.quantity}"></span>
+                </h5>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<style>
+    .container {
+        max-width:800px;
+    }
+
+    h2 {
+      font-weight: 600;
+      color: #6f4f37;
+    }
+
+    .card {
+      border: 1px solid #eaeaea;
+      border-radius: 12px;
+    }
+
+    .text-success {
+      color: #4b6f44 !important;
+    }
+
+    .text-primary {
+      color: #6f4f37 !important;
+    }
+</style>
+</html>

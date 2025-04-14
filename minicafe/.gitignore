@@ -1,0 +1,25 @@
+# Gradle build files
+/build/
+/.gradle/
+
+# IDE settings
+*.iml
+.idea/
+*.class
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# Application properties
+src/main/resources/application.properties
+src/main/resources/application-*.properties
+
+# AWS credentials
+.aws/

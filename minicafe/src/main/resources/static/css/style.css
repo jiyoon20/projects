@@ -1,0 +1,142 @@
+textarea {
+    width: 100%;
+}
+
+input[type=submit] {
+    margin-top: 10px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.btn-cart {
+    background-color: #4b6f44;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    padding: 8px 15px;
+    text-decoration: none;
+    align-items:center;
+    display : inline-flex;
+    justify-content: center;
+}
+
+.btn-cart:hover {
+    background-color: #6b8e23;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-cart i {
+    font-size: 1.3rem;
+    vertical-align: middle;
+    line-height: 1;
+    position: relative;
+    top: -1px;
+}
+
+.btn-coffee {
+    background-color: #6f4f37;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    padding: 8px 20px;
+    text-decoration: none;
+    align-items:center;
+    display : inline-flex;
+    justify-content: center;
+}
+
+.btn-coffee:hover {
+    background-color: #5a3e2e;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-list .card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    transform: scale(1.02) !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.admin-dashboard .card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard .card-body {
+    padding: 20px;
+}
+
+.bg-lightgreen {
+    background-color: #7f9e69;
+}
+
+.bg-lightgreen2 {
+    background-color: #6b8e23;
+}
+
+.customer-list .table {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.customer-list th,
+.customer-list td {
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.customer-list th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+}
+
+.customer-list tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.customer-list tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.customer-list .btn {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.customer-list .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.customer-list .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.customer-list .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.customer-list .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #666;
+}

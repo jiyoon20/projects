@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3 customer-list">
+  <h2 class="mb-4">Customer List</h2>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Username</th>
+      <th>Email Address</th>
+      <th>Created At</th>
+      <th>Order Numbers</th>
+      <th>Total Price</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customerManageDtos}">
+      <td th:text="${customer.userId}">1</td>
+      <td th:text="${customer.username}">admin</td>
+      <td th:text="${customer.email}">admin@admin.com</td>
+      <td th:text="${#temporals.format(customer.createdAt, 'yyyy-MM-dd HH:mm:ss')}">2025-04-08</td>
+      <td th:text="${customer.orderNumber}">0</td>
+      <td th:text="${customer.totalPrice}">0.0</td>
+      <td th:text="${customer.active ? 'Active' : 'Inactive'}"></td>
+      <td>
+        <form th:action="@{'/admin/customers/'+${customer.userId} + '/toggle-active'}" method="post">
+          <button type="submit" th:text="${customer.active} ? 'Deactivate' : 'Activate'"
+                  class="btn btn-sm"
+                  th:classappend="${customer.active} ? 'btn-danger' : 'btn-success'"></button>
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</html>

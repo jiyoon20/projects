@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" layout:decorate="~{layout}">
+    <div layout:fragment="content" class="container my-3">
+        <table class="table">
+            <tr>
+                <td class="coffee-image" style="width: 200px;">
+                    <img th:src="@{${menu.coffeeImageUrl}}" alt="Coffee Image"
+                         style="display: bloc; margin auto; with 400px;">
+                </td>
+                <td class="coffee-content">
+                    <h4 th:text="${menu.title}"></h4>
+                    <p>Price</p> <div th:text="${menu.price}"></div>
+                    <p>Calories</p> <div th:text="${menu.calories}"></div>
+                    <p>Description</p> <div th:text="${menu.content}"></div>
+                </td>
+            </tr>
+        </table>
+
+        <form th:action="@{/cart/add}" method="post">
+            <input type="hidden" name="menuId" th:value="${menu.menuId}">
+            <button type="submit" class="btn btn-success">Order</button>
+        </form>
+
+        <div class="my-3">
+            <a th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}"
+               th:href="@{|/menu/modify/${menu.menuId}|}" class="btn btn-sm btn-outline-secondary"
+               sec:authorize="isAuthenticated()" th:text="Modify"></a>
+            <a th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}"
+               th:href="'javascript:void(0)'"
+               th:data-uri="@{|/menu/delete/${menu.menuId}|}"
+               class="btn btn-sm btn-outline-secondary delete"
+               sec:authorize="isAuthenticated()"
+               th:text="Delete"></a>
+        </div>
+
+    </div>
+</html>

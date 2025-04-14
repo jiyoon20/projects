@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3 admin-dashboard">
+  <h2 class="mb-4">Admin Dashboard</h2>
+
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <a href="/menu/list" class="card text-white bg-lightgreen h-100 text-decoration-none">
+        <div class="card-body d-flex justify-content-center align-items-center">
+          <h4 class="card-title">Menu</h4>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <a href="/admin/customers" class="card text-white bg-lightgreen2 h-100 text-decoration-none">
+        <div class="card-body d-flex justify-content-center align-items-center">
+          <h4 class="card-title">Customer</h4>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <a href="/admin/order/list" class="card text-white bg-lightgreen h-100 text-decoration-none">
+        <div class="card-body d-flex justify-content-center align-items-center">
+          <h4 class="card-title">Order</h4>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</html>

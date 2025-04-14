@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+  <div th:if="${!adminExists}">
+    <a th:href="@{/admin/signup}"> <h2>Admin Sign Up </h2></a>
+  </div>
+
+  <div th:id="${isAdmin}">
+    <a th:href="@{/admin/main}"> Admin Dashborad </a>
+  </div>
+</div>
+</html>
